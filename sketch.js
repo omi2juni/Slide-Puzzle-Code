@@ -66,7 +66,7 @@ function mousePressed(){
 
 
 function draw() {
-  background("white");
+  background("black");
   
   //translate(50,50);
 
