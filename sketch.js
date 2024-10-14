@@ -6,7 +6,7 @@ var board = [];
 let blankSpot;
 
 function preload(){
-  source = loadImage("yuu.jpg");
+  source = loadImage("fhth_thumbnail2.png.jpg");
 }
 
 function setup() {
@@ -24,7 +24,7 @@ function setup() {
       img.copy(source,x,y,w,h, 0,0,w,h);
       let index = i+j*cols;
       board.push(index);
-      
+  
       let tile = new Tile(index,img);
       tiles.push(tile);
     }
@@ -50,7 +50,7 @@ function swap(i,j, arr){
 
 // shuffles the board and i=amount of shuffles
 function simpleShuffle(arr){
-  for (let i=0; i<500; i++){
+  for (let i=0; i<50; i++){
     let r1 = floor(random(cols));
     let r2 = floor(random(rows));
     move(r1,r2,arr);
@@ -66,16 +66,15 @@ function mousePressed(){
 
 
 function draw() {
-  background("black");
+  background("white");
   
   //translate(50,50);
-
+  
   for (let i=0; i<cols; i++){
     for (let j=0; j<rows; j++){
       let index = i+j*cols;
       let x = i*w;
       let y = j*h;
-      
       let tileIndex = board[index];
       if (tileIndex> -1){
         let img = tiles[tileIndex].img;
@@ -86,7 +85,8 @@ function draw() {
     
   
   if(isSolved()){
-  console.log("SOLVED");
+  //console.log("SOLVED");
+    image(source,0,0)
 }
   
 
